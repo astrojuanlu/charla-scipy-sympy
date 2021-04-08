@@ -166,7 +166,7 @@ Biblioteca para cálculo simbólico. Versión 1.7.1 https://docs.sympy.org/
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "subslide"} -->
-## Ejemplo: Derivación
+## Ejemplo: Derivación e integración
 
 Calcular las derivadas con respecto a $x$ e $y$ de la ecuación:
 
@@ -233,6 +233,52 @@ integrate(expr_xy, x)
 
 ```python slideshow={"slide_type": "fragment"}
 integrate(expr_xy, (x, -pi, pi))
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+## Ejemplo: Ecuaciones diferenciales ordinarias (solución simbólica)
+
+Resolvamos una ecuación diferencial ordinaria de grado dos:
+
+$$ y{\left (x \right )} + \frac{d}{d x} y{\left (x \right )} + \frac{d^{2}}{d x^{2}}  y{\left (x \right )} = \cos{\left (x \right )} $$ 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+Primero, definamos nuestras variables:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+from sympy import Function
+```
+
+```python slideshow={"slide_type": "fragment"}
+x = symbols("x")
+y = Function("y")
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+Definimos nuestra ecuación diferencial:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+from sympy import Eq
+```
+
+```python slideshow={"slide_type": "fragment"}
+ecuacion_dif = Eq(y(x).diff(x,2) + y(x).diff(x) + y(x), cos(x))
+ecuacion_dif
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+Y, finalmente, resolvamos usando la función `dsolve`:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+from sympy import dsolve
+```
+
+```python slideshow={"slide_type": "fragment"}
+dsolve(ecuacion_dif, y(x))
 ```
 
 <!-- #region slideshow={"slide_type": "slide"} -->
