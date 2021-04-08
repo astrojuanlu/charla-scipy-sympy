@@ -164,3 +164,19 @@ Biblioteca para cálculo simbólico. Versión 1.7.1 https://docs.sympy.org/
 - Física
 - ¡Y más!
 <!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+# Conclusiones
+
+- Python es más que un lenguaje: es un **ecosistema**
+- SciPy y SymPy son dos piezas de ese ecosistema
+- **SciPy** brinda herramientas de análisis numérico
+- **SymPy** ofrece, por contra, cálculo simbólico, más parecido al que operan los humanos
+<!-- #endregion -->
+
+# ¿Preguntas?
+
+![SciPy showcase](img/scipy-showcase.png)
+
+- ¡Escríbeme un email! <hello@juanlu.space>
+- Material de la charla: https://github.com/astrojuanlu/charla-scipy-sympy
