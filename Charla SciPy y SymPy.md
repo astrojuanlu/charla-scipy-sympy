@@ -165,6 +165,76 @@ Biblioteca para cálculo simbólico. Versión 1.7.1 https://docs.sympy.org/
 - ¡Y más!
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "subslide"} -->
+## Ejemplo: Derivación
+
+Calcular las derivadas con respecto a $x$ e $y$ de la ecuación:
+
+$$ x^{2} \cos{\left (y \right )} + y^{3} \sin^{2}{\left (x \right )} $$
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+En primer lugar, importamos SymPy:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+from sympy import init_printing, symbols, diff, sin, cos
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+En segundo lugar, inicializamos la presentación matemática de las expresiones:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+init_printing()
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+En tercer lugar, definimos nuestras variables simbólicas usando la función `symbols`:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+x, y = symbols("x, y")
+x, y
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+A continuación, definimos nuestra expresión:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+expr_xy = y ** 3 * sin(x) ** 2 + x ** 2 * cos(y)
+expr_xy
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+Y finalmente, calculamos las derivadas usando la función `diff`:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+diff(expr_xy, x)
+```
+
+```python slideshow={"slide_type": "fragment"}
+diff(expr_xy, x, 2, y, 3)
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+También podemos integrar:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+from sympy import integrate, pi
+```
+
+```python slideshow={"slide_type": "fragment"}
+integrate(expr_xy, x)
+```
+
+```python slideshow={"slide_type": "fragment"}
+integrate(expr_xy, (x, -pi, pi))
+```
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Conclusiones
 
@@ -174,9 +244,11 @@ Biblioteca para cálculo simbólico. Versión 1.7.1 https://docs.sympy.org/
 - **SymPy** ofrece, por contra, cálculo simbólico, más parecido al que operan los humanos
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "slide"} -->
 # ¿Preguntas?
 
 ![SciPy showcase](img/scipy-showcase.png)
 
 - ¡Escríbeme un email! <hello@juanlu.space>
 - Material de la charla: https://github.com/astrojuanlu/charla-scipy-sympy
+<!-- #endregion -->
