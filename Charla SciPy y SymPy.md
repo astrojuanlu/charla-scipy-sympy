@@ -85,13 +85,33 @@ jupyter:
 
 Biblioteca genérica de cálculo científico. Versión 1.6.2 https://docs.scipy.org/doc/scipy/reference/
 
-* `scipy.linalg`: álgebra lineal con ATLAS, LAPACK, y BLAS
-* `scipy.stats`: distribuciones, funciones estadísticas...
-* `scipy.integrate`: cuadratura de funciones, integración de EDOs
-* `scipy.optimization`: optimización local y global, ajuste, búsqueda de raíces...
-* `scipy.interpolate`: interpolación, _splines_...
-* `scipy.fftpack`: transformaciones rápidas de Fourier
-* `scipy.signal`: procesamiento de señal
-* `scipy.special`: funciones especiales
-* `scipy.io`: lectura y escritura de formatos científicos
+- `scipy.linalg`: álgebra lineal con ATLAS, LAPACK, y BLAS
+- `scipy.stats`: distribuciones, funciones estadísticas...
+- `scipy.integrate`: cuadratura de funciones, integración de EDOs
+- `scipy.optimization`: optimización local y global, ajuste, búsqueda de raíces...
+- `scipy.interpolate`: interpolación, _splines_...
+- `scipy.fftpack`: transformaciones rápidas de Fourier
+- `scipy.signal`: procesamiento de señal
+- `scipy.special`: funciones especiales
+- `scipy.io`: lectura y escritura de formatos científicos
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+# Cálculo simbólico con SymPy
+
+<img src="img/sympy.png" width="350px" style="float: right" />
+
+Biblioteca para cálculo simbólico. Versión 1.7.1 https://docs.sympy.org/
+
+- Operaciones elementales
+- Simplificación algebraica
+- Series de potencias
+- Ecuaciones algebraicas, diferenciales, polinómicas, diofantinas
+- Generación de código
+- Teoría de números
+- Matrices
+- Integrales
+- Geometría
+- Física
+- ¡Y más!
 <!-- #endregion -->
