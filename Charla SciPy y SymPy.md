@@ -288,6 +288,7 @@ dsolve(ecuacion_dif, y(x))
 - SciPy y SymPy son dos piezas de ese ecosistema
 - **SciPy** brinda herramientas de análisis numérico
 - **SymPy** ofrece, por contra, cálculo simbólico, más parecido al que operan los humanos
+- Hay mucha documentación y ayuda online, ¡solo tienen que preguntar!
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
