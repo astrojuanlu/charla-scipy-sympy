@@ -96,6 +96,55 @@ Biblioteca genérica de cálculo científico. Versión 1.6.2 https://docs.scipy.
 - `scipy.io`: lectura y escritura de formatos científicos
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "subslide"} -->
+## Ejemplo: Ecuación de Kepler
+
+La ecuación de Kepler
+
+$$M = E - e \sin E$$
+
+que relaciona dos parámetros geométricos de las órbitas elípticas, la anomalía media $M$ y la anomalía excéntrica $E$.
+
+![Anomalías excéntrica y media](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Kepler%27s-equation-scheme.png/250px-Kepler%27s-equation-scheme.png)
+
+para los siguientes valores de excentricidad:
+
+* Tierra: $0.0167$
+* Plutón: $0.249$
+* Cometa Holmes: $0.432$
+* 28P/Neujmin: $0.775$
+* Cometa Halley: $0.967$
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+En primer lugar, definimos la función correspondiente a:
+
+$$ F(E; e, M) \equiv M - E - e \sin{E} = 0 $$
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+import numpy as np
+
+def F(E, e, M):
+    return M - E + e * np.sin(E)
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+En segundo lugar, importamos el subpaquete necesario de SciPy:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+from scipy import optimize
+```
+
+<!-- #region slideshow={"slide_type": "subslide"} -->
+Y, en tercer lugar, utilizaremos la función `root_scalar`, que busca raíces en funciones univariantes, para resolver el caso $e = 0.0167$, $M = 0.3$:
+<!-- #endregion -->
+
+```python slideshow={"slide_type": "fragment"}
+optimize.root_scalar(F, args=(0.0167, 0.3), method="secant", x0=0.3, x1=0.2)
+```
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Cálculo simbólico con SymPy
 
